@@ -3,25 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Formulário</title>
 </head>
 <body>
-    <h3>ENVIE SUA MENSAGEM</h3>
-    <form method="post" action="server_post.php">
-        <label for="nome">Nome:</label>
-        <br>
-        <input type="text" name="nome" id="nome">
-        <br>
-        <label for="email">E-mail:</label>
-        <br>
-        <input type="email" name="email" id="email">
-        <br>
-        <label for="mensagem">Mensagem:</label>
-        <br>
-        <textarea name="mensagem" id="mensagem" rows="15">
-</textarea>
-        <br>
-        <input type="submit" value="Enviar">
-    </form>
+  <!-- Integrantes:
+  Nayara Bastos Porto
+  Silas Ferreira de Moura -->
+    <form action="server_insert.php" method="POST">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required placeholder="Informe seu Nome">
+        </div>
+      
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="Informe seu E-mail">
+        </div>
+      
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="tel" required placeholder="Informe seu Telefone">
+        </div>
+      
+        <div class="form-group">
+          <label for="data_nascimento">Data de Nascimento:</label>
+          <input type="date" id="data_nascimento" name="data_nasc" required maxlength="10">
+        </div>
+      
+        <div class="form-group">
+          <label>Gênero:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
+            <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
+            <label><input type="radio" name="genero" value="Outro"> Outro</label>
+          </div>
+        </div>
+
+        <select id="tipo_inscricao" name="tipo" required>
+            <option value="Palestrante">Palestrante</option>
+            <option value="Participante">Participante</option>
+            <option value="Voluntario">Voluntário(a)</option>
+          </select>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Informe sua mensagem ao mundo"></textarea>
+        </div>
+      
+        <button type="submit">Enviar</button>
+      </form>      
 </body>
 </html>
